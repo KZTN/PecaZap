@@ -1,9 +1,16 @@
 import React from "react";
-
-// import { Container } from './styles';
-
-const Login: React.FC = () => {
-  return <h1>Login</h1>;
-};
-
-export default Login;
+import AuthForm from "../../components/AuthForm";
+import bigChat from "../../assets/svgs/big_chat.svg";
+import "./styles.scss";
+export default function Login() {
+  return (
+    <section id="login">
+      <div className="left-content">
+        <AuthForm />
+      </div>
+      <div className="right-content">
+        <img src={bigChat} alt="background" />
+      </div>
+    </section>
+  );
+}

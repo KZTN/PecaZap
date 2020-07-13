@@ -1,0 +1,84 @@
+section#authform {
+  width: 295px;
+  height: 360px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+section#authform header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+section#authform .icons-wrapper {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+section#authform form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  & * {
+    margin-top: 15px;
+  }
+}
+
+section#authform form .box-input {
+  border: 1px solid #e0e7ed;
+  border-radius: 4px;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & * {
+    margin: auto 15px;
+  }
+}
+
+section#authform form .box-input input {
+  border: 0;
+  color: #c7d7e2;
+  background: transparent;
+  font-size: 15px;
+  line-height: 18px;
+  &::placeholder {
+    opacity: 0.8;
+  }
+}
+
+section#authform form button[type="submit"] {
+  border: 0;
+  background: #00a7cf;
+  color: #fff;
+  font-size: 15px;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  transition: all 0.1s ease-in-out;
+  & * {
+    margin: auto 0;
+  }
+  &:hover {
+    filter: brightness(95%);
+  }
+}
+
+section#authform .subactions {
+  margin-top: 15px;
+  text-align: center;
+  color: #999;
+}

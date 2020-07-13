@@ -1,0 +1,15 @@
+section#login {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  background: #f5f8fa;
+}
+section#login .left-content {
+  margin: 0 auto;
+}
+
+section#login .right-content {
+  margin-left: auto;
+}
