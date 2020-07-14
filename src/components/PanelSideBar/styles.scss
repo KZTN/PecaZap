@@ -1,0 +1,31 @@
+section#panelsidebar {
+  background: #f8fafc;
+  width: 64px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px 0 0 0;
+  overflow: hidden;
+}
+
+section#panelsidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+section#panelsidebar li {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  & * {
+    margin: auto;
+  }
+  & img {
+    width: 24px;
+    height: 24px;
+    svg {
+      fill: #159159;
+    }
+  }
+}
