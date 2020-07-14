@@ -1,11 +1,13 @@
 import React from "react";
 
 import formHeaderLogin from "../../assets/svgs/form_header_login.svg";
-import phoneIcon from "../../assets/svgs/phone_icon.svg";
-import skypeIcon from "../../assets/svgs/skype_icon.svg";
-import whatsappIcon from "../../assets/svgs/whatsapp_icon.svg";
-import webchatIcon from "../../assets/svgs/webchat_icon.svg";
-import mailIcon from "../../assets/svgs/mail_icon.svg";
+
+import { ReactComponent as PhoneIcon } from "../../assets/svgs/phone_icon.svg";
+import { ReactComponent as SkypeIcon } from "../../assets/svgs/skype_icon.svg";
+import { ReactComponent as WhatsappIcon } from "../../assets/svgs/whatsapp_icon.svg";
+import { ReactComponent as WebchatIcon } from "../../assets/svgs/webchat_icon.svg";
+import { ReactComponent as MailIcon } from "../../assets/svgs/mail_icon.svg";
+
 import arrowRight from "../../assets/svgs/arrow_right_icon.svg";
 import userIcon from "../../assets/svgs/user_input_icon.svg";
 import passwordIcon from "../../assets/svgs/password_input_icon.svg";
@@ -17,11 +19,11 @@ export default function AuthForm() {
       <header>
         <img src={formHeaderLogin} alt="logo" />
         <div className="icons-wrapper">
-          <img src={whatsappIcon} alt="whatsappicon" />
-          <img src={skypeIcon} alt="skypeicon" />
-          <img src={mailIcon} alt="mailicon" />
-          <img src={phoneIcon} alt="phoneicon" />
-          <img src={webchatIcon} alt="webchaticon" />
+          <WhatsappIcon style={{ fill: "#dddddd" }} />
+          <SkypeIcon style={{ fill: "#dddddd" }} />
+          <MailIcon style={{ fill: "#dddddd" }} />
+          <PhoneIcon style={{ fill: "#dddddd" }} />
+          <WebchatIcon style={{ fill: "#dddddd" }} />
         </div>
       </header>
       <form action="">
