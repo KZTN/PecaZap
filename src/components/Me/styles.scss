@@ -1,0 +1,36 @@
+section#me {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+section#me .thumbnail {
+  overflow: hidden;
+  margin-right: 15px;
+  background: #45a297;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+section#me .info {
+  font-weight: bold;
+}
+section#me .info .name {
+  color: #fff;
+  font-size: 16px;
+}
+
+section#me .info .company {
+  color: #7ed4e9;
+  font-size: 12px;
+}
+
+section#me .actions {
+  margin-left: auto;
+}
