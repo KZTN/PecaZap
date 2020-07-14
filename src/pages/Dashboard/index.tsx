@@ -1,7 +1,14 @@
 import React from "react";
 
-// import { Container } from './styles';
+import Sidebar from "../../components/SideBar";
+import Panel from "../../components/Panel";
 
+import "./styles.scss";
 export default function Dashboard() {
-  return <h1>Dashboard</h1>;
+  return (
+    <section id="dashboard">
+      <Sidebar />
+      <Panel />
+    </section>
+  );
 }
