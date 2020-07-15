@@ -13,7 +13,7 @@ const reducer: Reducer<CustomersState> = (state = INITIAL_STATE, action) => {
     case CustomersActions.LOAD_SUCCESS:
       return {
         ...state,
-        customers: [...state.customers, action.customers],
+        customers: [...action.payload],
       };
     case CustomersActions.LOAD_FAILURE: {
       console.log(action.error);
