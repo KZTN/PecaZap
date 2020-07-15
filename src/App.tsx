@@ -1,5 +1,6 @@
 import React from "react";
 import "dotenv";
+import "./config/ReactotronConfig";
 import Routes from "./routes";
 import { Provider } from "react-redux";
 import store from "./store";

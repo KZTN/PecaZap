@@ -1,7 +1,6 @@
 import React, { FC } from "react";
-
-import chevronIcon from "../../assets/svgs/chevron_bottom_icon.svg";
 import "./styles.scss";
+import Notification from "../Notification";
 
 interface Props {
   name: string;
@@ -9,9 +8,9 @@ interface Props {
   photo: string;
 }
 
-const Me: FC<Props> = ({ name, company, photo }: Props) => {
+const CardCustomer: FC<Props> = ({ name, company, photo }: Props) => {
   return (
-    <section id="me">
+    <section id="cardcustomer">
       <div className="thumbnail">
         <img src={photo} alt="profilepicture" />
       </div>
@@ -24,11 +23,9 @@ const Me: FC<Props> = ({ name, company, photo }: Props) => {
           <span>{company}</span>
         </div>
       </div>
-      <div className="actions">
-        <img src={chevronIcon} alt="actions" />
-      </div>
+      <Notification />
     </section>
   );
 };
 
-export default Me;
+export default CardCustomer;

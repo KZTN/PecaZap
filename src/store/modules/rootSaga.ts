@@ -1,6 +1,8 @@
 import { all } from "redux-saga/effects";
-import customers from "./Customers/sagas";
+
+import Customers from "./Customers/sagas";
+import User from "./User/sagas";
 
 export default function* rootSaga() {
-  return yield all([customers]);
+  return yield all([Customers, User]);
 }
