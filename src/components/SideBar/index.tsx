@@ -4,7 +4,7 @@ import Me from "../../components/Me";
 import Customer from "../../components/Customer";
 
 import plusIcon from "../../assets/svgs/plus_icon.svg";
-import magnifyingGlassIcon from "../../assets/svgs/magnifying_glass_icon.svg";
+import { ReactComponent as MagnifyingGlassIcon } from "../../assets/svgs/magnifying_glass_icon.svg";
 import asideLogo from "../../assets/svgs/aside_logo.svg";
 import "./styles.scss";
 
@@ -14,7 +14,7 @@ export default function SideBar() {
       <Me />
       <div className="box-search">
         <input type="text" />
-        <img src={magnifyingGlassIcon} alt="searchicon" />
+        <MagnifyingGlassIcon style={{ fill: "#ffffff" }} />
       </div>
       <div className="customers-actions">
         <span>CLIENTES</span>

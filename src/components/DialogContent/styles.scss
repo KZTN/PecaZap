@@ -1,0 +1,21 @@
+section#dialogcontent {
+  height: 100%;
+  width: 100%;
+  background: #f5f8fa;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  overflow-y: scroll;
+}
+section#dialogcontent .left-placed {
+  width: 50%;
+  display: flex;
+}
+section#dialogcontent .right-placed {
+  margin-left: auto;
+  width: 50%;
+  display: flex;
+}
+section#dialogcontent .blank-space {
+  min-height: 30px;
+}

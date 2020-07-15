@@ -1,0 +1,57 @@
+section#mailcompose {
+  margin-top: auto;
+  margin-bottom: 10px;
+  height: 240px;
+  width: 100%;
+  box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+section#mailcompose form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  & * {
+    margin: auto;
+  }
+}
+
+section#mailcompose form textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  color: #666;
+}
+
+section#mailcompose form .actions {
+  display: flex;
+  flex-direction: row;
+  margin-right: 100%;
+}
+
+section#mailcompose form .actions .actions-section {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+section#mailcompose form .actions button[type="submit"] {
+  background: #00a7cf;
+  font-size: 15px;
+  width: 164px;
+  height: 38px;
+  box-shadow: 0px 1px 0px #0794b6;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 4px;
+}
+
+section#mailcompose form .actions button {
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: 0;
+}

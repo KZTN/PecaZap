@@ -1,5 +1,7 @@
 import React from "react";
 
+import Notification from "../Notification";
+
 import { ReactComponent as CalendarIcon } from "../../assets/svgs/calendar_icon.svg";
 import { ReactComponent as PhoneIcon } from "../../assets/svgs/phone_icon.svg";
 import { ReactComponent as SkypeIcon } from "../../assets/svgs/skype_icon.svg";
@@ -13,22 +15,37 @@ export default function PanelSideBar() {
     <section id="panelsidebar">
       <ul>
         <li>
-          <CalendarIcon style={{ width: 24, height: 24, fill: "#00a7cf" }} />
+          <button>
+            <CalendarIcon style={{ width: 24, height: 24, fill: "#00a7cf" }} />
+          </button>
         </li>
         <li>
-          <WhatsappIcon style={{ width: 24, height: 24, fill: "#25d366" }} />
+          <button>
+            <WhatsappIcon style={{ width: 24, height: 24, fill: "#25d366" }} />
+          </button>
+          <div className="notification-place">
+            <Notification />
+          </div>
         </li>
         <li>
-          <MailIcon style={{ width: 24, height: 24, fill: "#e33e1a" }} />
+          <button>
+            <MailIcon style={{ width: 24, height: 24, fill: "#e33e1a" }} />
+          </button>
         </li>
         <li>
-          <SkypeIcon style={{ width: 24, height: 24, fill: "#00aff0" }} />
+          <button>
+            <SkypeIcon style={{ width: 24, height: 24, fill: "#00aff0" }} />
+          </button>
         </li>
         <li>
-          <PhoneIcon style={{ width: 24, height: 24, fill: "#6a4aea" }} />
+          <button>
+            <PhoneIcon style={{ width: 24, height: 24, fill: "#6a4aea" }} />
+          </button>
         </li>
         <li>
-          <WebchatIcon style={{ width: 24, height: 24, fill: "	#e87c28" }} />
+          <button>
+            <WebchatIcon style={{ width: 24, height: 24, fill: "	#e87c28" }} />
+          </button>
         </li>
       </ul>
     </section>

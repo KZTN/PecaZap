@@ -1,0 +1,133 @@
+section#panelcustomerinfo {
+  height: 100vh;
+  width: 296px;
+  background: #fff;
+  box-shadow: -4px 0px 2px rgba(0, 0, 0, 0.02);
+  padding: 20px;
+}
+
+section#panelcustomerinfo .customer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+section#panelcustomerinfo .thumbnail {
+  overflow: hidden;
+  margin-right: 15px;
+  background: #45a297;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+section#panelcustomerinfo .info {
+  font-weight: bold;
+}
+
+section#panelcustomerinfo .info .name {
+  color: #222;
+  font-size: 16px;
+}
+
+section#panelcustomerinfo .info .company {
+  color: #7ed4e9;
+  font-size: 12px;
+}
+
+section#panelcustomerinfo .actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+section#panelcustomerinfo .actions button {
+  background: #fff;
+  padding: 0.5rem 2.5rem;
+  box-shadow: 0px 1px 0px #e5e5e5;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+section#panelcustomerinfo .conversation-history {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+section#panelcustomerinfo .conversation-history header {
+  color: #79accd;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+section#panelcustomerinfo .conversation-history .conversation-item {
+  display: flex;
+  color: #222;
+  font-weight: 300;
+  margin-bottom: 8px;
+  font-size: 12px;
+  & span {
+    margin-left: 8px;
+  }
+}
+
+section#panelcustomerinfo .observations {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+section#panelcustomerinfo .observations header {
+  color: #79accd;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+section#panelcustomerinfo .observations p {
+  display: flex;
+  color: #222;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+section#panelcustomerinfo .contacts {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+section#panelcustomerinfo .contacts .contact-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8px;
+}
+section#panelcustomerinfo .contacts .contact-item .content {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+section#panelcustomerinfo .contacts .contact-item .content header {
+  font-weight: bold;
+  color: #79accd;
+  text-transform: uppercase;
+}
+
+section#panelcustomerinfo .contacts .contact-item .content span {
+  font-weight: 300;
+  color: #222;
+}
