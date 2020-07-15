@@ -2,6 +2,7 @@ import { Reducer } from "redux";
 import { CustomersState, CustomersActions } from "./types";
 const INITIAL_STATE: CustomersState = {
   customers: [],
+  customerSelected: -1,
 };
 
 const reducer: Reducer<CustomersState> = (state = INITIAL_STATE, action) => {

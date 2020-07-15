@@ -26,4 +26,5 @@ export interface Customer {
 
 export interface CustomersState {
   readonly customers: Customer[];
+  readonly customerSelected: number;
 }
