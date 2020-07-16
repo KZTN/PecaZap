@@ -2,6 +2,10 @@ section#panel {
   height: 100vh;
   width: 100%;
   display: flex;
+  background: #fff;
+  border-radius: 40px 0 0 0;
+  overflow: hidden;
   flex-direction: row;
   border-top: 10px solid #148073;
+  box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.1);
 }
