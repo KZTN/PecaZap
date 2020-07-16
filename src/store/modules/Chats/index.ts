@@ -5,6 +5,7 @@ const INITIAL_STATE: ChatsState = {
   chats: [],
   unseenChats: [],
   unseen: 0,
+  selectedMail: -1,
 };
 
 const reducer: Reducer<ChatsState> = (state = INITIAL_STATE, action) => {
@@ -19,6 +20,11 @@ const reducer: Reducer<ChatsState> = (state = INITIAL_STATE, action) => {
         chats: [...action.payload.chats],
         unseenChats: [...action.payload.unseenChats],
         unseen: action.payload.unseen,
+      };
+    case ChatActions.SELECT_MAIL:
+      return {
+        ...state,
+        selectedMail: action.payload,
       };
     case ChatActions.LOAD_FAILURE: {
       console.log(action.error);

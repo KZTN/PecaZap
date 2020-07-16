@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Chat } from "../../store/modules/Chats/types";
 import { ContactSelectChannel } from "../../store/modules/Contacts/actions";
+import { ChatsSelectMail } from "../../store/modules/Chats/actions";
 
 import Notification from "../Notification";
 
@@ -31,6 +32,7 @@ export default function PanelSideBar() {
 
   function handleClick(channelSelected: number) {
     dispatch(ContactSelectChannel(channelSelected));
+    dispatch(ChatsSelectMail(-1));
   }
 
   return (

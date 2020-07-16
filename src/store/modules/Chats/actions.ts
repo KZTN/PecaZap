@@ -8,5 +8,9 @@ export const ChatsLoadSucess = (
   unseenChats: ChatsState[],
   unseen: number
 ) => action(ChatActions.LOAD_SUCCESS, { chats, unseenChats, unseen });
+
 export const ChatsLoadFailure = (error: AxiosError) =>
   action(ChatActions.LOAD_FAILURE, error);
+
+export const ChatsSelectMail = (id: number) =>
+  action(ChatActions.SELECT_MAIL, id);

@@ -2,6 +2,7 @@ export enum ChatActions {
   LOAD_REQUEST = "@chats/LOAD_REQUEST",
   LOAD_SUCCESS = "@chats/LOAD_SUCCESS",
   LOAD_FAILURE = "@chats/LOAD_FAILURE",
+  SELECT_MAIL = "@chats/SELECT_MAIL",
 }
 
 export interface Message {
@@ -24,4 +25,5 @@ export interface ChatsState {
   readonly chats: Chat[];
   readonly unseenChats: Chat[];
   readonly unseen: number;
+  readonly selectedMail: number;
 }
