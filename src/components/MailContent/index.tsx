@@ -7,11 +7,6 @@ import "./styles.scss";
 export default function MailContent() {
   return (
     <section id="mailcontent">
-      <Incoming />
-      <OutGoing />
-      <OutGoing />
-      <OutGoing />
-      <OutGoing />
       <div className="blank-space" />
     </section>
   );

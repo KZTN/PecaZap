@@ -6,7 +6,7 @@ export enum ChatActions {
 
 export interface Message {
   readonly seen: boolean;
-  readonly timestamp: boolean;
+  readonly timestamp: number;
   readonly body: string;
   readonly type: string;
 }
