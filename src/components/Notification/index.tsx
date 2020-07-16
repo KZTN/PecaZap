@@ -8,9 +8,15 @@ interface Props {
 
 const Notification: FC<Props> = ({ notifications }: Props) => {
   return (
-    <section id="notification">
-      <span>{notifications}</span>
-    </section>
+    <>
+      {notifications !== 0 ? (
+        <section id="notification">
+          <span>{notifications}</span>
+        </section>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 

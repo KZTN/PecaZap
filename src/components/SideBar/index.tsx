@@ -16,7 +16,6 @@ export default function SideBar() {
   const unseenChats: Chat[] = useSelector(
     (state: any) => state.Chats.unseenChats
   );
-  console.log(unseenChats);
   const customers = useSelector((state: any) => state.Customers.customers);
   const user = useSelector((state: any) => state.User);
 
