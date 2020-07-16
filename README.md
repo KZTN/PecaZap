@@ -18,3 +18,6 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
+<p align="center">
+  <img alt="PeçaZap" src=".github/PeçaZap_showcase.png" width="100%">
+</p>
