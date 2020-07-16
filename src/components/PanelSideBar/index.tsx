@@ -16,6 +16,11 @@ import { ReactComponent as MailIcon } from "../../assets/svgs/mail_icon.svg";
 import "./styles.scss";
 export default function PanelSideBar() {
   const dispatch = useDispatch();
+
+  const channelSelected = useSelector(
+    (state: any) => state.Contacts.channelSelected
+  );
+
   const customerIsSelected = useSelector(
     (state: any) => state.Customers.customerSelected
   );
@@ -41,7 +46,7 @@ export default function PanelSideBar() {
               />
             </button>
           </li>
-          <li>
+          <li className={channelSelected === 1 ? "actived" : ""}>
             <button onClick={() => handleClick(1)}>
               <WhatsappIcon
                 style={{ width: 24, height: 24, fill: "#25d366" }}
@@ -57,7 +62,7 @@ export default function PanelSideBar() {
               />
             </div>
           </li>
-          <li>
+          <li className={channelSelected === 2 ? "actived" : ""}>
             <button onClick={() => handleClick(2)}>
               <MailIcon style={{ width: 24, height: 24, fill: "#e33e1a" }} />
             </button>
@@ -71,7 +76,7 @@ export default function PanelSideBar() {
               />
             </div>
           </li>
-          <li>
+          <li className={channelSelected === 3 ? "actived" : ""}>
             <button onClick={() => handleClick(3)}>
               <SkypeIcon style={{ width: 24, height: 24, fill: "#00aff0" }} />
             </button>
@@ -85,7 +90,7 @@ export default function PanelSideBar() {
               />
             </div>
           </li>
-          <li>
+          <li className={channelSelected === 4 ? "actived" : ""}>
             <button onClick={() => handleClick(4)}>
               <PhoneIcon style={{ width: 24, height: 24, fill: "#6a4aea" }} />
             </button>
@@ -99,7 +104,7 @@ export default function PanelSideBar() {
               />
             </div>
           </li>
-          <li>
+          <li className={channelSelected === 5 ? "actived" : ""}>
             <button onClick={() => handleClick(5)}>
               <WebchatIcon style={{ width: 24, height: 24, fill: "	#e87c28" }} />
             </button>

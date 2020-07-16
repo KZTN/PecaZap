@@ -20,6 +20,8 @@ section#panelsidebar li {
   width: 64px;
   height: 64px;
   display: flex;
+  transition: all 0.15s ease-in-out;
+
   & * {
     margin: auto;
   }
@@ -31,6 +33,11 @@ section#panelsidebar li {
     }
   }
 }
+
+section#panelsidebar li.actived {
+  background: #ddd;
+}
+
 section#panelsidebar li .notification-place {
   position: absolute;
   margin-top: 42px;
@@ -42,8 +49,4 @@ section#panelsidebar li button {
   border: 0;
   width: 100%;
   height: 100%;
-  transition: all 0.15s ease-in-out;
-  &:hover {
-    background: #ddd;
-  }
 }
