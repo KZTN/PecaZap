@@ -19,27 +19,29 @@ export default function DialogContent() {
   );
   return (
     <section id="dialogcontent">
-      {content.messages.map((message: Message) => (
-        <>
-          {message.type === "incoming" ? (
-            <div className="left-placed">
-              <Incoming
-                body={message.body}
-                seen={message.seen}
-                timestamp={message.timestamp}
-              />
-            </div>
-          ) : (
-            <div className="right-placed">
-              <OutGoing
-                body={message.body}
-                seen={message.seen}
-                timestamp={message.timestamp}
-              />
-            </div>
-          )}
-        </>
-      ))}
+      {content
+        ? content.messages.map((message: Message) => (
+            <>
+              {message.type === "incoming" ? (
+                <div className="left-placed">
+                  <Incoming
+                    body={message.body}
+                    seen={message.seen}
+                    timestamp={message.timestamp}
+                  />
+                </div>
+              ) : (
+                <div className="right-placed">
+                  <OutGoing
+                    body={message.body}
+                    seen={message.seen}
+                    timestamp={message.timestamp}
+                  />
+                </div>
+              )}
+            </>
+          ))
+        : ""}
       <div className="blank-space" />
     </section>
   );

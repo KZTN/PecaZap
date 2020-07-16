@@ -9,8 +9,6 @@ import OutGoing from "../OutGoing";
 
 import "./styles.scss";
 export default function MailContent() {
-  const dispatch = useDispatch();
-
   const mailIsSelected = useSelector((state: any) => state.Chats.selectedMail);
 
   const [mailSelected]: Chat[] = useSelector(

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { CustomersSelectCustomer } from "../../store/modules/Customers/actions";
+import { ContactSelectChannel } from "../../store/modules/Contacts/actions";
 
 import "./styles.scss";
 import Notification from "../Notification";
@@ -27,6 +28,7 @@ const CardCustomer: FC<Props> = ({
   const dispatch = useDispatch();
   function handleSelectUser(id: number) {
     dispatch(CustomersSelectCustomer(id));
+    dispatch(ContactSelectChannel(-1));
   }
 
   return (
