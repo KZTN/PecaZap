@@ -1,10 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 
 import "./styles.scss";
-export default function Notification() {
+
+interface Props {
+  notifications: number;
+}
+
+const Notification: FC<Props> = ({ notifications }: Props) => {
   return (
     <section id="notification">
-      <span>2</span>
+      <span>{notifications}</span>
     </section>
   );
-}
+};
+
+export default Notification;

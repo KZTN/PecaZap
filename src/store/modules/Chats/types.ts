@@ -22,4 +22,6 @@ export interface Chat {
 
 export interface ChatsState {
   readonly chats: Chat[];
+  readonly unseenChats: Chat[];
+  readonly unseen: number;
 }

@@ -24,7 +24,7 @@ export default function PanelSideBar() {
             <WhatsappIcon style={{ width: 24, height: 24, fill: "#25d366" }} />
           </button>
           <div className="notification-place">
-            <Notification />
+            <Notification notifications={1} />
           </div>
         </li>
         <li>

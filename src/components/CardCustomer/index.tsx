@@ -11,9 +11,16 @@ interface Props {
   name: string;
   company: string;
   photo: string;
+  notifications: number;
 }
 
-const CardCustomer: FC<Props> = ({ name, company, photo, id }: Props) => {
+const CardCustomer: FC<Props> = ({
+  name,
+  company,
+  photo,
+  id,
+  notifications,
+}: Props) => {
   const customerIsSelected = useSelector(
     (state: any) => state.Customers.customerSelected
   );
@@ -40,7 +47,11 @@ const CardCustomer: FC<Props> = ({ name, company, photo, id }: Props) => {
           <span>{company}</span>
         </div>
       </div>
-      <Notification />
+      {notifications !== 0 ? (
+        <Notification notifications={notifications} />
+      ) : (
+        ""
+      )}
     </section>
   );
 };
