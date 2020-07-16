@@ -1,7 +1,8 @@
 import React from "react";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Chat } from "../../store/modules/Chats/types";
+import { ContactSelectChannel } from "../../store/modules/Contacts/actions";
 
 import Notification from "../Notification";
 
@@ -14,6 +15,7 @@ import { ReactComponent as MailIcon } from "../../assets/svgs/mail_icon.svg";
 
 import "./styles.scss";
 export default function PanelSideBar() {
+  const dispatch = useDispatch();
   const customerIsSelected = useSelector(
     (state: any) => state.Customers.customerSelected
   );
@@ -22,7 +24,10 @@ export default function PanelSideBar() {
     (state: any) => state.Chats.unseenChats
   ).filter((unseenChat: Chat) => unseenChat.customer === customerIsSelected);
 
-  console.log(unseenChats);
+  function handleClick(channelSelected: number) {
+    dispatch(ContactSelectChannel(channelSelected));
+  }
+
   return (
     <section id="panelsidebar">
       {customerIsSelected === -1 ? (
@@ -37,7 +42,7 @@ export default function PanelSideBar() {
             </button>
           </li>
           <li>
-            <button>
+            <button onClick={() => handleClick(1)}>
               <WhatsappIcon
                 style={{ width: 24, height: 24, fill: "#25d366" }}
               />
@@ -53,7 +58,7 @@ export default function PanelSideBar() {
             </div>
           </li>
           <li>
-            <button>
+            <button onClick={() => handleClick(2)}>
               <MailIcon style={{ width: 24, height: 24, fill: "#e33e1a" }} />
             </button>
             <div className="notification-place">
@@ -67,7 +72,7 @@ export default function PanelSideBar() {
             </div>
           </li>
           <li>
-            <button>
+            <button onClick={() => handleClick(3)}>
               <SkypeIcon style={{ width: 24, height: 24, fill: "#00aff0" }} />
             </button>
             <div className="notification-place">
@@ -81,7 +86,7 @@ export default function PanelSideBar() {
             </div>
           </li>
           <li>
-            <button>
+            <button onClick={() => handleClick(4)}>
               <PhoneIcon style={{ width: 24, height: 24, fill: "#6a4aea" }} />
             </button>
             <div className="notification-place">
@@ -95,7 +100,7 @@ export default function PanelSideBar() {
             </div>
           </li>
           <li>
-            <button>
+            <button onClick={() => handleClick(5)}>
               <WebchatIcon style={{ width: 24, height: 24, fill: "	#e87c28" }} />
             </button>
             <div className="notification-place">

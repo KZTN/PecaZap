@@ -6,3 +6,5 @@ export const ContactLoadSucess = (user: ContactsState) =>
   action(ContactsActions.LOAD_SUCCESS, user);
 export const ContactLoadFailure = (error: AxiosError) =>
   action(ContactsActions.LOAD_FAILURE, error);
+export const ContactSelectChannel = (channel: number) =>
+  action(ContactsActions.SELECT_CHANNEL, channel);

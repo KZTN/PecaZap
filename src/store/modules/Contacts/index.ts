@@ -2,6 +2,7 @@ import { Reducer } from "redux";
 import { ContactsState, ContactsActions } from "./types";
 const INITIAL_STATE: ContactsState = {
   contacts: [],
+  channelSelected: -1,
 };
 
 const reducer: Reducer<ContactsState> = (state = INITIAL_STATE, action) => {
@@ -18,7 +19,11 @@ const reducer: Reducer<ContactsState> = (state = INITIAL_STATE, action) => {
       console.log(action.error);
       return state;
     }
-
+    case ContactsActions.SELECT_CHANNEL:
+      return {
+        ...state,
+        channelSelected: action.payload,
+      };
     default:
       return state;
   }
