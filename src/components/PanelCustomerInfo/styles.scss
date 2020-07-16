@@ -70,17 +70,6 @@ section#panelcustomerinfo .conversation-history header {
   margin-bottom: 10px;
 }
 
-section#panelcustomerinfo .conversation-history .conversation-item {
-  display: flex;
-  color: #222;
-  font-weight: 300;
-  margin-bottom: 8px;
-  font-size: 12px;
-  & span {
-    margin-left: 8px;
-  }
-}
-
 section#panelcustomerinfo .observations {
   margin-top: 20px;
   display: flex;
@@ -107,27 +96,4 @@ section#panelcustomerinfo .contacts {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-}
-section#panelcustomerinfo .contacts .contact-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 8px;
-}
-section#panelcustomerinfo .contacts .contact-item .content {
-  margin-left: 8px;
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-}
-
-section#panelcustomerinfo .contacts .contact-item .content header {
-  font-weight: bold;
-  color: #79accd;
-  text-transform: uppercase;
-}
-
-section#panelcustomerinfo .contacts .contact-item .content span {
-  font-weight: 300;
-  color: #222;
 }

@@ -2,9 +2,10 @@ export enum CustomersActions {
   LOAD_REQUEST = "@customers/LOAD_REQUEST",
   LOAD_SUCCESS = "@customers/LOAD_SUCCESS",
   LOAD_FAILURE = "@customers/LOAD_FAILURE",
+  SELECT_CUSTOMER = "@customers/SELECT_CUSTOMER",
 }
 
-export interface Contacts {
+export interface Contact {
   channel: number;
   value: string;
 }
@@ -21,7 +22,7 @@ export interface Customer {
   readonly company: string;
   readonly lastConversations: lastConversations[];
   readonly observations: string;
-  readonly contacts: Contacts[];
+  readonly contacts: Contact[];
 }
 
 export interface CustomersState {

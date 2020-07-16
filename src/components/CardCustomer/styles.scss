@@ -1,9 +1,16 @@
 section#cardcustomer {
+  height: 70px;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+section#cardcustomer.actived {
+  background: rgba(0, 0, 0, 0.08);
 }
 
 section#cardcustomer .thumbnail {

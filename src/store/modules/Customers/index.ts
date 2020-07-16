@@ -20,7 +20,11 @@ const reducer: Reducer<CustomersState> = (state = INITIAL_STATE, action) => {
       console.log(action.error);
       return state;
     }
-
+    case CustomersActions.SELECT_CUSTOMER:
+      return {
+        ...state,
+        customerSelected: action.payload,
+      };
     default:
       return state;
   }

@@ -1,90 +1,88 @@
 import React from "react";
 
-import { ReactComponent as PhoneIcon } from "../../assets/svgs/phone_icon.svg";
-import { ReactComponent as SkypeIcon } from "../../assets/svgs/skype_icon.svg";
-import { ReactComponent as WhatsappIcon } from "../../assets/svgs/whatsapp_icon.svg";
-import { ReactComponent as WebchatIcon } from "../../assets/svgs/webchat_icon.svg";
-import { ReactComponent as MailIcon } from "../../assets/svgs/mail_icon.svg";
+import { useSelector } from "react-redux";
+import {
+  Customer,
+  Contact,
+  lastConversations,
+} from "../../store/modules/Customers/types";
+
+import { Type } from "../../store/modules/Contacts/types";
 
 import pencilIcon from "../../assets/svgs/pencil_icon.svg";
 import trashIcon from "../../assets/svgs/trash_icon.svg";
 
+import LastConversations from "../LastConversation";
+import ContactCustomer from "../ContactCustomer";
+
 import "./styles.scss";
 
 export default function PanelCustomerInfo() {
+  const customerIsSelected = useSelector(
+    (state: any) => state.Customers.customerSelected
+  );
+
+  const contacts: Type[] = useSelector((state: any) => state.Contacts);
+
+  const [customerSelected]: Customer[] = useSelector(
+    (state: any) => state.Customers.customers
+  ).filter((e: Customer) => e.id === customerIsSelected);
+
   return (
     <section id="panelcustomerinfo">
-      <div className="customer">
-        <div className="thumbnail">
-          <img
-            src="https://ui-avatars.com/api/?name=Joao+Silva"
-            alt="profilepicture"
-          />
-        </div>
+      {customerIsSelected === -1 ? (
+        ""
+      ) : (
+        <>
+          <div className="customer">
+            <div className="thumbnail">
+              <img src={customerSelected.photo} alt="profilepicture" />
+            </div>
 
-        <div className="info">
-          <div className="name">
-            <span>João da Silva</span>
+            <div className="info">
+              <div className="name">
+                <span>{customerSelected.name}</span>
+              </div>
+              <div className="company">
+                <span>{customerSelected.company}</span>
+              </div>
+            </div>
           </div>
-          <div className="company">
-            <span>ACME INC</span>
+          <div className="actions">
+            <button>
+              <img src={pencilIcon} alt="pen" />
+            </button>
+            <button>
+              <img src={trashIcon} alt="trash" />
+            </button>
           </div>
-        </div>
-      </div>
-      <div className="actions">
-        <button>
-          <img src={pencilIcon} alt="pen" />
-        </button>
-        <button>
-          <img src={trashIcon} alt="trash" />
-        </button>
-      </div>
-      <div className="conversation-history">
-        <header>Últimas conversas</header>
-        <div className="conversation-item">
-          <WhatsappIcon style={{ width: 16, height: 16, fill: "#A7B6C2" }} />
-          <span>25/09/2019 (10 dias atrás)</span>
-        </div>
-        <div className="conversation-item">
-          <WhatsappIcon style={{ width: 16, height: 16, fill: "#A7B6C2" }} />
-          <span>15/09/2019 (20 dias atrás)</span>
-        </div>
-        <div className="conversation-item">
-          <SkypeIcon style={{ width: 16, height: 16, fill: "#A7B6C2" }} />
-          <span>15/06/2019 (100 dias atrás)</span>
-        </div>
-      </div>
-      <div className="observations">
-        <header>Observações</header>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, lacus,
-          et potenti nisl viverra a, feugiat. Eget ultrices elit faucibus arcu
-          volutpat vulputate.
-        </p>
-      </div>
-      <div className="contacts">
-        <div className="contact-item">
-          <WhatsappIcon style={{ width: 24, height: 24, fill: "#A7B6C2" }} />
-          <div className="content">
-            <header>Whatsapp</header>
-            <span>55 (19) 1234-5678</span>
+          <div className="conversation-history">
+            <header>Últimas conversas</header>
+            {customerSelected.lastConversations.map(
+              (conversation: lastConversations) => (
+                <LastConversations
+                  key={conversation.finishedAt}
+                  finishedAt={conversation.finishedAt}
+                  channel={conversation.channel}
+                />
+              )
+            )}
           </div>
-        </div>
-        <div className="contact-item">
-          <MailIcon style={{ width: 24, height: 24, fill: "#A7B6C2" }} />
-          <div className="content">
-            <header>EMail</header>
-            <span>joao@silva.com.br</span>
+          <div className="observations">
+            <header>Observações</header>
+            <p>{customerSelected.observations}</p>
           </div>
-        </div>
-        <div className="contact-item">
-          <SkypeIcon style={{ width: 24, height: 24, fill: "#A7B6C2" }} />
-          <div className="content">
-            <header>Skype</header>
-            <span>@joao_silva</span>
+          <div className="contacts">
+            {customerSelected.contacts.map((contact: Contact) => (
+              <ContactCustomer
+                key={contact.value}
+                type={contacts[contact.channel - 1].type}
+                value={contact.value}
+              />
+            ))}
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </section>
   );
 }

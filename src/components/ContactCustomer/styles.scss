@@ -1,0 +1,23 @@
+section#contactcustomer .contact-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8px;
+}
+section#contactcustomer .contact-item .content {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+section#contactcustomer .contact-item .content header {
+  font-weight: bold;
+  color: #79accd;
+  text-transform: uppercase;
+}
+
+section#contactcustomer .contact-item .content span {
+  font-weight: 300;
+  color: #222;
+}
