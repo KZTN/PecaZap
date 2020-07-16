@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 import PanelSideBar from "../PanelSideBar";
 import Dialog from "../Dialog";
-import Mail from "../Mail";
 import MailBox from "../MailBox";
 import PanelCustomerInfo from "../PanelCustomerInfo";
 
@@ -14,12 +13,23 @@ export default function Panel() {
   const customerIsSelected = useSelector(
     (state: any) => state.Customers.customerSelected
   );
+  const channelSelected = useSelector(
+    (state: any) => state.Contacts.channelSelected
+  );
   return (
     <section id="panel">
       <PanelSideBar />
-      {customerIsSelected !== -1 ? <Dialog /> : ""}
-      {/* <MailBox /> */}
-      {/* <Mail /> */}
+      {customerIsSelected !== -1 ? (
+        channelSelected === 1 ? (
+          <Dialog />
+        ) : channelSelected === 2 ? (
+          <MailBox />
+        ) : (
+          ""
+        )
+      ) : (
+        ""
+      )}
       <PanelCustomerInfo />
     </section>
   );
