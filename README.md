@@ -81,3 +81,7 @@ yarn start
 
 
 Visite http://localhost:3000 com o seu navegador para ver o resultado. 🎉
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
