@@ -1,5 +1,6 @@
 import { Reducer } from "redux";
-import { ChatsState, ChatActions } from "./types";
+import { ChatsState, ChatActions, Chat } from "./types";
+import produce from "immer";
 
 const INITIAL_STATE: ChatsState = {
   chats: [],
@@ -21,15 +22,26 @@ const reducer: Reducer<ChatsState> = (state = INITIAL_STATE, action) => {
         unseenChats: [...action.payload.unseenChats],
         unseen: action.payload.unseen,
       };
+    case ChatActions.LOAD_FAILURE: {
+      console.log(action.payload);
+      return state;
+    }
+    case ChatActions.REMOVE_CHAT_NOTIFICATION:
+      /*       return {
+        ...state,
+        unseen: state.unseen - 1,
+      }; */
+      return produce(state, (draft) => {
+        const selectedChat = draft.unseenChats.filter(
+          (chat: Chat) => chat.id !== action.payload
+        );
+        draft.unseenChats = selectedChat;
+      });
     case ChatActions.SELECT_MAIL:
       return {
         ...state,
         selectedMail: action.payload,
       };
-    case ChatActions.LOAD_FAILURE: {
-      console.log(action.payload);
-      return state;
-    }
 
     default:
       return state;

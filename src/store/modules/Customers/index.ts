@@ -17,7 +17,7 @@ const reducer: Reducer<CustomersState> = (state = INITIAL_STATE, action) => {
         customers: [...action.payload],
       };
     case CustomersActions.LOAD_FAILURE: {
-      console.log(action.error);
+      console.log(action.payload);
       return state;
     }
     case CustomersActions.SELECT_CUSTOMER:

@@ -3,6 +3,7 @@ export enum ChatActions {
   LOAD_SUCCESS = "@chats/LOAD_SUCCESS",
   LOAD_FAILURE = "@chats/LOAD_FAILURE",
   SELECT_MAIL = "@chats/SELECT_MAIL",
+  REMOVE_CHAT_NOTIFICATION = "@chats/REMOVE_CHAT_NOTIFICATION",
 }
 
 export interface Message {

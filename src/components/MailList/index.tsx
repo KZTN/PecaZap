@@ -4,7 +4,10 @@ import moment from "moment";
 
 import { useSelector, useDispatch } from "react-redux";
 import { Chat } from "../../store/modules/Chats/types";
-import { ChatsSelectMail } from "../../store/modules/Chats/actions";
+import {
+  ChatsSelectMail,
+  ChatsRemoveChatNotification,
+} from "../../store/modules/Chats/actions";
 
 import Notification from "../Notification";
 
@@ -25,6 +28,7 @@ export default function MailList() {
 
   function handleClick(id: number) {
     dispatch(ChatsSelectMail(id));
+    dispatch(ChatsRemoveChatNotification(id));
   }
 
   return (
@@ -46,10 +50,7 @@ export default function MailList() {
                 onClick={() => handleClick(mail.id)}
                 className={mail.lastSeen === false ? "special" : ""}
               >
-                <td
-                  className={"special-left-td"}
-                  onClick={() => console.log(mail.lastSeen)}
-                >
+                <td className={"special-left-td"}>
                   <span>{mail.subject}</span>
                 </td>
                 <td>

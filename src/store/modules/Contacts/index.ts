@@ -16,7 +16,7 @@ const reducer: Reducer<ContactsState> = (state = INITIAL_STATE, action) => {
         ...action.payload,
       };
     case ContactsActions.LOAD_FAILURE: {
-      console.log(action.error);
+      console.log(action.payload);
       return state;
     }
     case ContactsActions.SELECT_CHANNEL:
