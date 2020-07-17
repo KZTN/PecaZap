@@ -12,23 +12,54 @@ section#maillist table {
     text-align: left;
     padding: 12px;
   }
-
-  tbody td {
-    background: #fff;
-    padding: 12px;
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-    margin-bottom: 20px;
+  tbody tr.special td {
+    background: #ffff;
   }
-  span {
+
+  tbody tr td {
+    background: #f8fafc;
+    padding: 12px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 4px;
+  }
+  tbody td.special-right-td {
+    border-right: 1px solid #e5e5e5;
+    border-radius: 4px;
+  }
+  tbody td.special-left-td {
+    border-left: 1px solid #e5e5e5;
+    border-radius: 4px;
+  }
+  tbody tr.special td span {
+    color: #222;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  tbody tr td span {
     color: #222;
     font-size: 15px;
   }
 }
+section#maillist table tbody td .notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-section#maillist table tbody td .notification * {
+section#maillist table tbody tr.special td .notification * {
   margin: auto;
   justify-content: center;
   color: #fff;
   font-size: 10px;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+}
+
+section#maillist table .blank-space {
+  height: 5px;
 }
