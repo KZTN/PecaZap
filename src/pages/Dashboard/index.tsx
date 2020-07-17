@@ -16,20 +16,19 @@ import "./styles.scss";
 
 export default function Dashboard() {
   const history = useHistory();
+  const dispatch = useDispatch();
+
   const isAuth = useSelector((state: any) => state.User.auth);
   useEffect(() => {
     if (isAuth === false) {
       history.push("/");
+    } else {
+      dispatch(CustomersLoadRequest());
+      dispatch(UserLoadRequest());
+      dispatch(ChatsLoadRequest());
+      dispatch(ContactLoadRequest());
     }
-  }, [history, isAuth]);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(CustomersLoadRequest());
-    dispatch(UserLoadRequest());
-    dispatch(ChatsLoadRequest());
-    dispatch(ContactLoadRequest());
-  }, [dispatch]);
+  }, [dispatch, history, isAuth]);
 
   return (
     <section id="dashboard">
