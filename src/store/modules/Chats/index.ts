@@ -27,10 +27,6 @@ const reducer: Reducer<ChatsState> = (state = INITIAL_STATE, action) => {
       return state;
     }
     case ChatActions.REMOVE_CHAT_NOTIFICATION:
-      /*       return {
-        ...state,
-        unseen: state.unseen - 1,
-      }; */
       return produce(state, (draft) => {
         const selectedChat = draft.unseenChats.filter((chat: Chat) =>
           chat.customer === action.payload.customer
