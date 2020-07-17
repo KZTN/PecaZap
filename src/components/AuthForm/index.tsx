@@ -1,7 +1,9 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState, useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
 
+import { useDispatch, useSelector } from "react-redux";
+import { UserAuthRequest } from "../../store/modules/User/actions";
 import formHeaderLogin from "../../assets/svgs/form_header_login.svg";
 
 import { ReactComponent as PhoneIcon } from "../../assets/svgs/phone_icon.svg";
@@ -17,11 +19,22 @@ import passwordIcon from "../../assets/svgs/password_input_icon.svg";
 import "./styles.scss";
 export default function AuthForm() {
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  const isAuth = useSelector((state: any) => state.User.auth);
+  const [UserField, setUserField] = useState<string>("");
+  const [PasswordField, setPasswordField] = useState<string>("");
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    history.push("/dashboard");
+    dispatch(UserAuthRequest(UserField, PasswordField));
   }
+
+  useEffect(() => {
+    if (isAuth) {
+      history.push("/dashboard");
+    }
+  }, [history, isAuth]);
 
   return (
     <section id="authform">
@@ -38,12 +51,24 @@ export default function AuthForm() {
       <form onSubmit={handleSubmit}>
         <div className="box-input">
           <img src={userIcon} alt="usericon" />
-          <input type="text" placeholder="Usuário" required />
+          <input
+            type="text"
+            placeholder="Usuário"
+            value={UserField}
+            onChange={(e) => setUserField(e.target.value)}
+            required
+          />
         </div>
         <div className="box-input">
           <img src={passwordIcon} alt="passwordicon" />
 
-          <input type="password" placeholder="Senha" required />
+          <input
+            type="password"
+            placeholder="Senha"
+            value={PasswordField}
+            onChange={(e) => setPasswordField(e.target.value)}
+            required
+          />
         </div>
         <button type="submit">
           <span>Entrar</span>
