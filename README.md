@@ -22,6 +22,11 @@
   <img alt="PeçaZap" src=".github/PeçaZap_showcase.png" width="100%">
 </p>
 
+
+## ℹ️  Informações
+
+Este é um desafio que faz parte do recrutamento da Vulcanet. O projeto já está finalizado e funcional.
+
 ## 🔌 Base url 
 
 Todas chamadas devem usar a url base:
