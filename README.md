@@ -34,3 +34,50 @@ Todas chamadas devem usar a url base:
 https://my-json-server.typicode.com/matheuscampanhaf/api-challenge
 ```
 A API está usando o pacote Cors, isso permite o acesso de qualquer Interface (frontend), desde que a mesma seja direcionada para a porta adequada.
+
+## Começando...
+Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
+
+### Pré-requisitos
+O que você precisa para instalar o software:
+
+```
+node v12.x
+yarn 1.22.4
+git
+```
+> Para uma melhor experiência no ambiente de testes com o servidor API REST, recomenda-se o uso do [insomnia](https://insomnia.rest/)
+
+### Instalando o projeto 🚀
+Clonando o projeto:
+
+```
+git clone https://github.com/KZTN/Desafio_Vulcanet_parte_2.git
+```
+
+Navegando até a pasta do projeto:
+
+```
+cd Desafio_Vulcanet_parte_2
+```
+
+Crie um arquivo `.env` na raíz do projeto e adicione as seguintes linhas:
+
+```bash
+REACT_APP_API_URL= https://my-json-server.typicode.com/matheuscampanhaf/api-challenge
+```
+
+Baixando as dependências do projeto:
+
+```bash
+yarn install
+```
+
+Rodando o projeto:
+
+```bash
+yarn start
+```
+
+
+Visite http://localhost:3000 com o seu navegador para ver o resultado. 🎉
