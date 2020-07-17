@@ -53,11 +53,14 @@ export default function MailList() {
                 </span>
               </td>
               <td>
-                {mail.messages[mail.messages.length - 1].seen === false ? (
-                  <Notification notifications={1} />
-                ) : (
-                  ""
-                )}
+                <div className="notification">
+                  {" "}
+                  {mail.messages[mail.messages.length - 1].seen === false ? (
+                    <Notification notifications={1} />
+                  ) : (
+                    ""
+                  )}
+                </div>
               </td>
             </tr>
           ))}

@@ -25,3 +25,10 @@ section#maillist table {
     font-size: 15px;
   }
 }
+
+section#maillist table tbody td .notification * {
+  margin: auto;
+  justify-content: center;
+  color: #fff;
+  font-size: 10px;
+}
