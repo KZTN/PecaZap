@@ -17,9 +17,7 @@ const reducer: Reducer<UserState> = (state = INITIAL_STATE, action) => {
         auth: true,
       };
     case UserActions.AUTH_FAILURE:
-      return {
-        ...state,
-      };
+      return state;
     case UserActions.LOAD_SUCCESS:
       return { ...state, ...action.payload };
     case UserActions.LOAD_FAILURE: {

@@ -1,5 +1,7 @@
 import { call, put, takeLatest, all } from "redux-saga/effects";
 import { UserActions } from "./types";
+import { toast } from "react-toastify";
+
 import api from "../../../services/api";
 import {
   UserLoadFailure,
@@ -26,7 +28,14 @@ function* auth({ payload }: any): object {
     ) {
       yield put(UserAuthSuccess());
     } else {
-      console.log("usuario ou senha invalidos");
+      toast("Usuário ou senha incorretos", {
+        position: "top-right",
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       yield put(UserAuthFailure());
     }
   } catch (error) {
