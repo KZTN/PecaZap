@@ -26,9 +26,27 @@ export default function MailList() {
     (chat: Chat) => chat.channel === 2 && chat.customer === customerIsSelected
   );
 
+  const listUnseenMails: Chat[] = useSelector(
+    (state: any) => state.Chats.unseenChats
+  ).filter(
+    (chat: Chat) => chat.channel === 2 && chat.customer === customerIsSelected
+  );
+
   function handleClick(id: number) {
     dispatch(ChatsSelectMail(id));
-    dispatch(ChatsRemoveChatNotification(id));
+    dispatch(ChatsRemoveChatNotification(id, customerIsSelected));
+  }
+  function checkIsSpecial(id: number) {
+    const [lastUnseen]: Chat[] = listUnseenMails.filter(
+      (chat: Chat) => chat.id === id
+    );
+    if (lastUnseen) {
+      if (lastUnseen.lastSeen) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 
   return (
@@ -48,7 +66,7 @@ export default function MailList() {
               <tr
                 key={mail.id}
                 onClick={() => handleClick(mail.id)}
-                className={mail.lastSeen === false ? "special" : ""}
+                className={checkIsSpecial(mail.id) === false ? "special" : ""}
               >
                 <td className={"special-left-td"}>
                   <span>{mail.subject}</span>
@@ -65,7 +83,7 @@ export default function MailList() {
                 </td>
                 <td className={"special-right-td"}>
                   <div className="notification">
-                    {mail.lastSeen === false ? (
+                    {checkIsSpecial(mail.id) === false ? (
                       <>
                         <Notification notifications={1} />
                         <img src={arrowRight} alt="" />

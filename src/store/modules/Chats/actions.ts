@@ -15,5 +15,5 @@ export const ChatsLoadFailure = (error: AxiosError) =>
 export const ChatsSelectMail = (id: number) =>
   action(ChatActions.SELECT_MAIL, id);
 
-export const ChatsRemoveChatNotification = (id: number) =>
-  action(ChatActions.REMOVE_CHAT_NOTIFICATION, id);
+export const ChatsRemoveChatNotification = (id: number, customer: number) =>
+  action(ChatActions.REMOVE_CHAT_NOTIFICATION, { id, customer });

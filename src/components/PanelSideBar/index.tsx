@@ -35,7 +35,11 @@ export default function PanelSideBar() {
 
   function handleClick(channelSelected: number) {
     dispatch(ContactSelectChannel(channelSelected));
-    dispatch(ChatsRemoveChatNotification(channelSelected));
+    if (channelSelected !== 2) {
+      dispatch(
+        ChatsRemoveChatNotification(channelSelected, customerIsSelected)
+      );
+    }
     dispatch(ChatsSelectMail(-1));
   }
 

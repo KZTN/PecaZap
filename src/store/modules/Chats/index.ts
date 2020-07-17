@@ -32,8 +32,10 @@ const reducer: Reducer<ChatsState> = (state = INITIAL_STATE, action) => {
         unseen: state.unseen - 1,
       }; */
       return produce(state, (draft) => {
-        const selectedChat = draft.unseenChats.filter(
-          (chat: Chat) => chat.id !== action.payload
+        const selectedChat = draft.unseenChats.filter((chat: Chat) =>
+          chat.customer === action.payload.customer
+            ? chat.id !== action.payload.id
+            : { ...chat }
         );
         draft.unseenChats = selectedChat;
       });
