@@ -21,3 +21,11 @@
 <p align="center">
   <img alt="PeçaZap" src=".github/PeçaZap_showcase.png" width="100%">
 </p>
+
+## 🔌 Base url 
+
+Todas chamadas devem usar a url base:
+```
+https://my-json-server.typicode.com/matheuscampanhaf/api-challenge
+```
+A API está usando o pacote Cors, isso permite o acesso de qualquer Interface (frontend), desde que a mesma seja direcionada para a porta adequada.
