@@ -19,6 +19,7 @@ export interface Chat {
   readonly channel: number;
   readonly subject: "";
   readonly start: number;
+  readonly lastSeen: boolean;
 }
 
 export interface ChatsState {

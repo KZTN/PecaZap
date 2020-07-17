@@ -18,7 +18,7 @@ export default function MailContent() {
   return (
     <section id="mailcontent">
       {mailSelected.messages.map((message: Message) => (
-        <>
+        <div key={message.timestamp}>
           {message.type === "incoming" ? (
             <Incoming
               body={message.body}
@@ -32,7 +32,7 @@ export default function MailContent() {
               timestamp={message.timestamp}
             />
           )}
-        </>
+        </div>
       ))}
       <div className="blank-space" />
     </section>

@@ -40,44 +40,40 @@ export default function MailList() {
         </thead>
         <tbody>
           {listMails.map((mail: Chat) => (
-            <>
-              <tr
-                key={mail.id}
-                onClick={() => handleClick(mail.id)}
-                className={
-                  mail.messages[mail.messages.length - 1].seen === false
-                    ? "special"
-                    : ""
-                }
+            <tr
+              key={mail.id}
+              onClick={() => handleClick(mail.id)}
+              className={mail.lastSeen === false ? "special" : ""}
+            >
+              <td
+                className={"special-left-td"}
+                onClick={() => console.log(mail.lastSeen)}
               >
-                <td className={"special-left-td"}>
-                  <span>{mail.subject}</span>
-                </td>
-                <td>
-                  <span>{moment.unix(mail.start).format("DD/MM/YYYY")}</span>
-                </td>
-                <td>
-                  <span>
-                    {moment
-                      .unix(mail.messages[mail.messages.length - 1].timestamp)
-                      .format("DD/MM/YYYY")}
-                  </span>
-                </td>
-                <td className={"special-right-td"}>
-                  <div className="notification">
-                    {mail.messages[mail.messages.length - 1].seen === false ? (
-                      <>
-                        <Notification notifications={1} />
-                        <img src={arrowRight} alt="" />
-                      </>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </td>
-              </tr>
-              <div className="blank-space" />
-            </>
+                <span>{mail.subject}</span>
+              </td>
+              <td>
+                <span>{moment.unix(mail.start).format("DD/MM/YYYY")}</span>
+              </td>
+              <td>
+                <span>
+                  {moment
+                    .unix(mail.messages[mail.messages.length - 1].timestamp)
+                    .format("DD/MM/YYYY")}
+                </span>
+              </td>
+              <td className={"special-right-td"}>
+                <div className="notification">
+                  {mail.lastSeen === false ? (
+                    <>
+                      <Notification notifications={1} />
+                      <img src={arrowRight} alt="" />
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>

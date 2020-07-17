@@ -6,11 +6,21 @@ import { Chat } from "./types";
 function* request(): object {
   try {
     const response = yield call(api.get, "chats");
+
     const notseen = response.data.filter(
       (seen: Chat) => seen.messages[seen.messages.length - 1].seen === false
     );
+
+    const processedResponse = response.data.map((chat: Chat) => {
+      if (chat.messages[chat.messages.length - 1].seen === false) {
+        return { ...chat, lastSeen: false };
+      } else {
+        return { ...chat, lastSeen: true };
+      }
+    });
+
     yield put(
-      ChatsLoadSucess(response.data, notseen, Object.keys(notseen).length)
+      ChatsLoadSucess(processedResponse, notseen, Object.keys(notseen).length)
     );
   } catch (error) {
     console.log(error);

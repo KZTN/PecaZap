@@ -27,7 +27,7 @@ const reducer: Reducer<ChatsState> = (state = INITIAL_STATE, action) => {
         selectedMail: action.payload,
       };
     case ChatActions.LOAD_FAILURE: {
-      console.log(action.error);
+      console.log(action.payload);
       return state;
     }
 
