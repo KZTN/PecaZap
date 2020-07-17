@@ -11,7 +11,7 @@ import {
 
 import Notification from "../Notification";
 
-import arrowRight from "../../assets/svgs/arrow_right_icon.svg";
+import { ReactComponent as ArrowRight } from "../../assets/svgs/arrow_right_icon.svg";
 
 import "./styles.scss";
 
@@ -86,7 +86,7 @@ export default function MailList() {
                     {checkIsSpecial(mail.id) === false ? (
                       <>
                         <Notification notifications={1} />
-                        <img src={arrowRight} alt="" />
+                        <ArrowRight style={{ fill: "#A7B6C2" }} />
                       </>
                     ) : (
                       ""

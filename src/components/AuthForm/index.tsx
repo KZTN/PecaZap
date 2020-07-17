@@ -9,8 +9,8 @@ import { ReactComponent as SkypeIcon } from "../../assets/svgs/skype_icon.svg";
 import { ReactComponent as WhatsappIcon } from "../../assets/svgs/whatsapp_icon.svg";
 import { ReactComponent as WebchatIcon } from "../../assets/svgs/webchat_icon.svg";
 import { ReactComponent as MailIcon } from "../../assets/svgs/mail_icon.svg";
+import { ReactComponent as ArrowRight } from "../../assets/svgs/arrow_right_icon.svg";
 
-import arrowRight from "../../assets/svgs/arrow_right_icon.svg";
 import userIcon from "../../assets/svgs/user_input_icon.svg";
 import passwordIcon from "../../assets/svgs/password_input_icon.svg";
 
@@ -47,7 +47,7 @@ export default function AuthForm() {
         </div>
         <button type="submit">
           <span>Entrar</span>
-          <img src={arrowRight} alt="arrowicon" />
+          <ArrowRight style={{ fill: "#ffffff" }} />
         </button>
       </form>
       <div className="subactions">
