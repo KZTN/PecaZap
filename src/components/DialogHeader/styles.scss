@@ -8,6 +8,7 @@ section#dialogheader {
   justify-content: space-between;
   align-items: center;
   box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.02);
+  z-index: 10000;
 }
 
 section#dialogheader .box-search {
